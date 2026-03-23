@@ -765,6 +765,16 @@ input[type="range"].slider::-webkit-slider-thumb {
     box-shadow: 0 10px 40px rgba(0,0,0,0.03);
 }
 
+.model-switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.model-switcher .btn {
+    width: 100%;
+}
+
 .pricing-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
@@ -1365,10 +1375,43 @@ input[type="range"].slider::-webkit-slider-thumb {
         max-width: none;
         background: rgba(255, 255, 255, 0.9);
         border-radius: 1rem;
-        margin-bottom: 1rem;
-        padding: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
         z-index: 10;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .customizer-left-panel h3 {
+        display: none;
+    }
+
+    .customizer-left-panel .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: auto;
+        flex: 1;
+    }
+
+    .model-switcher {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .model-switcher .btn {
+        width: auto;
+        flex: 1;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        margin: 0 !important;
     }
 
     #canvas-container {

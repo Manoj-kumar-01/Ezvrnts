@@ -1317,27 +1317,43 @@ input[type="range"].slider::-webkit-slider-thumb {
         padding: 8rem 0 4rem;
         text-align: center;
         overflow: hidden;
+        width: 100%;
     }
 
     .hero h1 {
         font-size: 2.25rem;
         line-height: 1.1;
         padding: 0 1rem;
+        width: 100%;
     }
 
     .hero-actions {
         flex-direction: column;
         width: 100%;
         padding: 0 1rem;
+        gap: 1rem;
     }
 
     .hero-actions .btn {
         width: 100%;
+        margin: 0 !important;
     }
 
     /* Customizer Panel Layout - Fix Overlap */
     .customizer-section {
-        padding: 1rem 0;
+        padding: 2rem 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .customizer-container {
+        height: auto;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        margin: 0;
     }
 
     .customizer-left-panel {
@@ -1347,27 +1363,21 @@ input[type="range"].slider::-webkit-slider-thumb {
         transform: none;
         width: 100%;
         max-width: none;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 1rem;
         margin-bottom: 1rem;
-        padding: 0.75rem;
-        z-index: 5;
-    }
-
-    .customizer-container {
-        height: auto;
-        min-height: 85vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
+        padding: 1rem;
+        z-index: 10;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
     #canvas-container {
         position: relative;
         flex: 1;
         width: 100%;
-        min-height: 450px !important;
+        min-height: 400px !important;
         z-index: 1;
+        background: #f8fafc;
     }
 
     .customizer-controls {
@@ -1377,38 +1387,106 @@ input[type="range"].slider::-webkit-slider-thumb {
         right: 0;
         width: 100%;
         height: auto;
-        max-height: 50vh;
+        max-height: 40vh;
         border-radius: 1.5rem 1.5rem 0 0;
-        padding: 1.25rem;
+        padding: 1.5rem;
         transform: none;
         background: white;
         box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-        z-index: 5;
+        z-index: 10;
         overflow-y: auto;
+        margin-top: auto;
     }
 
-    /* Section Spacing */
+    /* Section Spacing & Grid Fixes */
     .bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
         padding: 1rem;
+        width: 100%;
+    }
+
+    .bento-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        width: 100%;
+        flex-direction: column !important;
+        min-height: auto !important;
+    }
+
+    .bento-card.wide {
+        flex-direction: column !important;
+    }
+
+    .workflow-staggered {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .workflow-step {
+        flex-direction: column !important;
+        padding: 2.5rem 1.5rem !important;
+        gap: 2rem !important;
+        width: 100% !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .workflow-step.staggered {
+        transform: none !important;
+    }
+
+    .step-visual {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 200px !important;
     }
 
     .metrics-ribbon {
         padding: 4rem 1rem;
-        transform: none;
+        transform: none !important;
         overflow: hidden;
+        width: 100%;
     }
 
     .metrics-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 3rem;
+        width: 100%;
+    }
+
+    .metric-divider {
+        display: none !important;
+    }
+
+    .metric-value {
+        font-size: 3.5rem;
+    }
+
+    /* Pricing Fixes */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    .pricing-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        transform: none !important;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 3rem;
         text-align: center;
         padding: 0 2rem;
+        width: 100%;
+    }
+
+    .footer-logo {
+        justify-content: center;
     }
 }
 

@@ -11,11 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile menu toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const menuClose = document.querySelector('.mobile-menu-close');
     const navLinks = document.querySelector('.nav-links');
     
     menuToggle?.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         menuToggle.classList.toggle('active');
+    });
+
+    menuClose?.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle?.classList.remove('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle?.classList.remove('active');
+        });
     });
 
     // FAQ Accordion

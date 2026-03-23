@@ -45,6 +45,12 @@ body {
     line-height: 1.5;
     background-color: var(--bg-main);
     overflow-x: hidden;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 h1, h2, h3, .logo-text {
@@ -1270,8 +1276,16 @@ input[type="range"].slider::-webkit-slider-thumb {
         height: 70px;
     }
 
-    .mobile-menu-toggle {
-        display: flex;
+    .mobile-menu-close {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 2.5rem;
+        background: none;
+        border: none;
+        color: var(--text-main);
+        cursor: pointer;
     }
 
     .nav-links {
@@ -1285,8 +1299,9 @@ input[type="range"].slider::-webkit-slider-thumb {
         justify-content: center;
         align-items: center;
         gap: 2.5rem;
-        transition: right 0.4s ease;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 2000;
+        padding: 2rem;
     }
 
     .nav-links.active {
@@ -1297,56 +1312,103 @@ input[type="range"].slider::-webkit-slider-thumb {
         display: none;
     }
 
+    /* Hero Fixes */
     .hero {
         padding: 8rem 0 4rem;
         text-align: center;
+        overflow: hidden;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         line-height: 1.1;
+        padding: 0 1rem;
     }
 
     .hero-actions {
         flex-direction: column;
         width: 100%;
+        padding: 0 1rem;
     }
 
     .hero-actions .btn {
         width: 100%;
     }
 
+    /* Customizer Panel Layout - Fix Overlap */
+    .customizer-section {
+        padding: 1rem 0;
+    }
+
+    .customizer-left-panel {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        max-width: none;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        z-index: 5;
+    }
+
+    .customizer-container {
+        height: auto;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    #canvas-container {
+        position: relative;
+        flex: 1;
+        width: 100%;
+        min-height: 450px !important;
+        z-index: 1;
+    }
+
+    .customizer-controls {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 50vh;
+        border-radius: 1.5rem 1.5rem 0 0;
+        padding: 1.25rem;
+        transform: none;
+        background: white;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+        z-index: 5;
+        overflow-y: auto;
+    }
+
+    /* Section Spacing */
     .bento-grid {
         grid-template-columns: 1fr;
+        padding: 1rem;
     }
 
-    .bento-card.large, .bento-card.wide {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .workflow-step {
-        flex-direction: column;
-        padding: 2rem;
+    .metrics-ribbon {
+        padding: 4rem 1rem;
+        transform: none;
+        overflow: hidden;
     }
 
     .metrics-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .metric-divider {
-        display: none;
-    }
-
-    .metric-value {
-        font-size: 3rem;
+        gap: 2.5rem;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
+        padding: 0 2rem;
     }
 }
 

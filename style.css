@@ -1358,12 +1358,16 @@ input[type="range"].slider::-webkit-slider-thumb {
 
     .customizer-container {
         height: auto;
-        min-height: 90vh;
+        min-height: auto;
+        overflow: visible !important;
         display: flex;
         flex-direction: column;
         position: relative;
         width: 100%;
         margin: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     .customizer-left-panel {
@@ -1435,13 +1439,13 @@ input[type="range"].slider::-webkit-slider-thumb {
         width: 100%;
         height: auto;
         max-height: none !important;
-        border-radius: 2rem 2rem 1.5rem 1.5rem;
+        border-radius: 2rem;
         padding: 2.5rem 1.5rem 1.5rem;
         transform: none;
         background: white;
-        box-shadow: 0 -20px 40px rgba(0,0,0,0.08);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         z-index: 10;
-        overflow-y: visible !important;
+        overflow: visible !important;
         margin-top: 1rem;
         border: 1px solid rgba(0,0,0,0.03);
     }
@@ -1545,6 +1549,10 @@ input[type="range"].slider::-webkit-slider-thumb {
     }
 
     .customizer-container {
-        height: 80vh;
+        min-height: auto;
+    }
+    
+    #canvas-container {
+        min-height: 400px !important;
     }
 }
